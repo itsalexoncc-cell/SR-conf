@@ -1,0 +1,264 @@
+# Shadowrocket: 2026-08-29 14:05:19
+[General]
+private-ip-answer = false
+bypass-system = true
+udp-policy-not-supported-behaviour = REJECT
+skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, captive.apple.com
+tun-excluded-routes = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32, 239.255.255.250/32
+dns-direct-system = true
+dns-server = https://cloudflare-dns.com/dns-query
+fallback-dns-server = tls://common.dot.dns.yandex.net,https://common.dot.dns.yandex.net/dns-query
+ipv6 = false
+tfo = true
+
+[Rule]
+# =========================================
+# LAN
+# =========================================
+IP-CIDR,192.168.0.0/16,DIRECT
+IP-CIDR,10.0.0.0/8,DIRECT
+IP-CIDR,172.16.0.0/12,DIRECT
+IP-CIDR,127.0.0.0/8,DIRECT
+
+# =========================================
+# Telegram
+# =========================================
+DOMAIN-SUFFIX,t.me,PROXY
+DOMAIN-SUFFIX,telegram.me,PROXY
+DOMAIN-SUFFIX,telegram.org,PROXY
+DOMAIN-SUFFIX,telegra.ph,PROXY
+DOMAIN-SUFFIX,telesco.pe,PROXY
+DOMAIN-SUFFIX,kod.ru,PROXY
+DOMAIN-KEYWORD,kod,PROXY
+IP-CIDR,91.108.4.0/22,PROXY,no-resolve
+IP-CIDR,91.108.8.0/22,PROXY,no-resolve
+IP-CIDR,91.108.12.0/22,PROXY,no-resolve
+IP-CIDR,91.108.16.0/22,PROXY,no-resolve
+IP-CIDR,91.108.56.0/22,PROXY,no-resolve
+IP-CIDR,149.154.160.0/20,PROXY,no-resolve
+
+# =========================================
+# 🇷🇺 Российские сервисы — DIRECT (в начале!)
+# =========================================
+# Проверка сертификатов российских УЦ — напряму
+DOMAIN-SUFFIX,nuc-cdp.digital.gov.ru,DIRECT
+DOMAIN-SUFFIX,nuc-cdp.voshhod.ru,DIRECT
+
+# СБП / НСПК — платежи, шлюзы, оплата по QR
+DOMAIN-KEYWORD,nspk,DIRECT
+DOMAIN-KEYWORD,sbp,DIRECT
+DOMAIN-KEYWORD,cbr,DIRECT
+DOMAIN-SUFFIX,sbpay.ru,DIRECT
+
+# ВТБ
+DOMAIN-KEYWORD,vtb,DIRECT
+DOMAIN-SUFFIX,multibonus.ru,DIRECT
+DOMAIN-SUFFIX,api.vtb.ru,DIRECT
+DOMAIN-SUFFIX,static.vtb.ru,DIRECT
+DOMAIN-SUFFIX,cdn.vtb.ru,DIRECT
+
+# Yandex
+DOMAIN-KEYWORD,yandex,DIRECT
+DOMAIN-SUFFIX,yandex.ru,DIRECT
+DOMAIN-SUFFIX,yandex.net,DIRECT
+DOMAIN-SUFFIX,yastatic.net,DIRECT
+DOMAIN-SUFFIX,yandexcloud.net,DIRECT
+DOMAIN-SUFFIX,kinopoisk.ru,DIRECT
+DOMAIN-SUFFIX,ya.ru,DIRECT
+
+# VK / Mail.ru
+DOMAIN-SUFFIX,vk.com,DIRECT
+DOMAIN-SUFFIX,vkvideo.ru,DIRECT
+DOMAIN-SUFFIX,vkuser.net,DIRECT
+DOMAIN-SUFFIX,userapi.com,DIRECT
+DOMAIN-SUFFIX,mycdn.me,DIRECT
+DOMAIN-SUFFIX,mail.ru,DIRECT
+DOMAIN-SUFFIX,mailres.ru,DIRECT
+DOMAIN-SUFFIX,list.ru,DIRECT
+
+# Госуслуги
+DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
+DOMAIN-SUFFIX,esia.gosuslugi.ru,DIRECT
+
+# Банки
+DOMAIN-KEYWORD,bank,DIRECT
+DOMAIN-KEYWORD,sber,DIRECT
+DOMAIN-KEYWORD,tbank,DIRECT
+DOMAIN-KEYWORD,tinkoff,DIRECT
+DOMAIN-KEYWORD,alfabank,DIRECT
+DOMAIN-KEYWORD,gazprombank,DIRECT
+DOMAIN-KEYWORD,raiffeisen,DIRECT
+DOMAIN-KEYWORD,pochta,DIRECT
+DOMAIN-SUFFIX,sberbank.ru,DIRECT
+DOMAIN-SUFFIX,tbank.ru,DIRECT
+DOMAIN-SUFFIX,tinkoff.ru,DIRECT
+DOMAIN-SUFFIX,alfabank.ru,DIRECT
+
+# Маркетплейсы
+DOMAIN-KEYWORD,ozon,DIRECT
+DOMAIN-KEYWORD,wildberries,DIRECT
+DOMAIN-KEYWORD,wb,DIRECT
+DOMAIN-KEYWORD,market,DIRECT
+DOMAIN-SUFFIX,ozon.ru,DIRECT
+DOMAIN-SUFFIX,ozoncdn.ru,DIRECT
+DOMAIN-SUFFIX,wildberries.ru,DIRECT
+DOMAIN-SUFFIX,wb.ru,DIRECT
+DOMAIN-SUFFIX,market.yandex.ru,DIRECT
+DOMAIN-SUFFIX,sbermegamarket.ru,DIRECT
+
+# Доставка / еда
+DOMAIN-KEYWORD,magnit,DIRECT
+DOMAIN-KEYWORD,dostavista,DIRECT
+DOMAIN-KEYWORD,samokat,DIRECT
+DOMAIN-KEYWORD,yem,DIRECT
+DOMAIN-KEYWORD,delivery,DIRECT
+DOMAIN-KEYWORD,vkusnoitochka,DIRECT
+DOMAIN-SUFFIX,eda.yandex.ru,DIRECT
+DOMAIN-SUFFIX,lavka.yandex.ru,DIRECT
+DOMAIN-SUFFIX,samokat.ru,DIRECT
+DOMAIN-SUFFIX,delivery-club.ru,DIRECT
+DOMAIN-SUFFIX,vkusnoitochka.ru,DIRECT
+
+# Такси / карты
+DOMAIN-SUFFIX,kpas.ru,PROXY
+DOMAIN-SUFFIX,2gis.ru,DIRECT
+DOMAIN-SUFFIX,2gis.com,DIRECT
+DOMAIN-SUFFIX,navi.yandex.ru,DIRECT
+DOMAIN-SUFFIX,taxi.yandex.ru,DIRECT
+
+# Операторы
+DOMAIN-KEYWORD,mts,DIRECT
+DOMAIN-KEYWORD,megafon,DIRECT
+DOMAIN-KEYWORD,beeline,DIRECT
+DOMAIN-KEYWORD,tele2,DIRECT
+DOMAIN-KEYWORD,t2,DIRECT
+DOMAIN-SUFFIX,mts.ru,DIRECT
+DOMAIN-SUFFIX,megafon.ru,DIRECT
+DOMAIN-SUFFIX,beeline.ru,DIRECT
+DOMAIN-SUFFIX,t2.ru,DIRECT
+DOMAIN-SUFFIX,tele2.ru,DIRECT
+
+# Онлайн кинотеатры
+DOMAIN-SUFFIX,ivi.ru,DIRECT
+DOMAIN-SUFFIX,okko.tv,DIRECT
+DOMAIN-SUFFIX,start.ru,DIRECT
+DOMAIN-SUFFIX,premier.one,DIRECT
+DOMAIN-SUFFIX,wink.ru,DIRECT
+DOMAIN-SUFFIX,kion.ru,DIRECT
+
+# Работа / объявления
+DOMAIN-SUFFIX,hh.ru,DIRECT
+DOMAIN-SUFFIX,avito.ru,DIRECT
+DOMAIN-SUFFIX,youla.ru,DIRECT
+
+# Аптеки / медицина
+DOMAIN-KEYWORD,apteka,DIRECT
+DOMAIN-SUFFIX,eapteka.ru,DIRECT
+DOMAIN-SUFFIX,apteka.ru,DIRECT
+DOMAIN-SUFFIX,kdl.ru,DIRECT
+DOMAIN-SUFFIX,gemotest.ru,DIRECT
+DOMAIN-SUFFIX,helix.ru,DIRECT
+
+# Образование
+DOMAIN-KEYWORD,netschool,DIRECT
+DOMAIN-SUFFIX,dnevnik.ru,DIRECT
+DOMAIN-SUFFIX,uchi.ru,DIRECT
+
+# =========================================
+# 🍎 Apple
+# =========================================
+DOMAIN-SUFFIX,music.apple.com,PROXY
+DOMAIN-SUFFIX,applemusic.com,PROXY
+DOMAIN-SUFFIX,mzstatic.com,PROXY
+DOMAIN-SUFFIX,tv.apple.com,PROXY
+DOMAIN-SUFFIX,tvad.apple.com,PROXY
+DOMAIN-SUFFIX,arcade.apple.com,PROXY
+DOMAIN-SUFFIX,appstore.com,PROXY
+DOMAIN-SUFFIX,itunes.apple.com,PROXY
+DOMAIN-SUFFIX,icloud.com,PROXY
+DOMAIN-SUFFIX,me.com,PROXY
+DOMAIN-SUFFIX,apple-cloudkit.com,PROXY
+DOMAIN-SUFFIX,push.apple.com,PROXY
+DOMAIN-SUFFIX,apple.com,PROXY
+
+# =========================================
+# 🤖 AI (ChatGPT / Gemini / Claude / Grok / Copilot / Perplexity)
+# =========================================
+DOMAIN-KEYWORD,openai,PROXY
+DOMAIN-SUFFIX,openai.com,PROXY
+DOMAIN-SUFFIX,chatgpt.com,PROXY
+DOMAIN-SUFFIX,oaistatic.com,PROXY
+DOMAIN-SUFFIX,oaiusercontent.com,PROXY
+DOMAIN-SUFFIX,cdn.oaistatic.com,PROXY
+DOMAIN-SUFFIX,gemini.google.com,PROXY
+DOMAIN-SUFFIX,generativelanguage.googleapis.com,PROXY
+DOMAIN-SUFFIX,ai.google.dev,PROXY
+DOMAIN-SUFFIX,makersuite.google.com,PROXY
+DOMAIN-SUFFIX,claude.ai,PROXY
+DOMAIN-SUFFIX,anthropic.com,PROXY
+DOMAIN-SUFFIX,grok.com,PROXY
+DOMAIN-SUFFIX,x.ai,PROXY
+DOMAIN-SUFFIX,xai.com,PROXY
+DOMAIN-SUFFIX,copilot.microsoft.com,PROXY
+DOMAIN-SUFFIX,bing.com,PROXY
+DOMAIN-SUFFIX,bingapis.com,PROXY
+DOMAIN-SUFFIX,perplexity.ai,PROXY
+DOMAIN-SUFFIX,pplx.ai,PROXY
+DOMAIN-SUFFIX,poe.com,PROXY
+DOMAIN-SUFFIX,you.com,PROXY
+DOMAIN-SUFFIX,deepseek.com,PROXY
+DOMAIN-SUFFIX,deepseek.ai,PROXY
+DOMAIN-SUFFIX,mistral.ai,PROXY
+DOMAIN-SUFFIX,meta.ai,PROXY
+DOMAIN-SUFFIX,character.ai,PROXY
+DOMAIN-SUFFIX,huggingface.co,PROXY
+DOMAIN-SUFFIX,hf.space,PROXY
+
+# =========================================
+# 🔍 Google Services
+# =========================================
+DOMAIN-KEYWORD,google,PROXY
+DOMAIN-SUFFIX,gstatic.com,PROXY
+DOMAIN-SUFFIX,googleapis.com,PROXY
+
+# =========================================
+# 🎬 YouTube
+# =========================================
+DOMAIN-SUFFIX,youtube.com,PROXY
+DOMAIN-SUFFIX,ytimg.com,PROXY
+DOMAIN-SUFFIX,youtu.be,PROXY
+DOMAIN-SUFFIX,googlevideo.com,PROXY
+
+# =========================================
+# 📱 Соцсети
+# =========================================
+DOMAIN-SUFFIX,instagram.com,PROXY
+DOMAIN-SUFFIX,cdninstagram.com,PROXY
+DOMAIN-SUFFIX,facebook.com,PROXY
+DOMAIN-SUFFIX,fbcdn.net,PROXY
+DOMAIN-SUFFIX,whatsapp.com,PROXY
+DOMAIN-SUFFIX,whatsapp.net,PROXY
+DOMAIN-SUFFIX,x.com,PROXY
+DOMAIN-SUFFIX,twitter.com,PROXY
+DOMAIN-SUFFIX,t.co,PROXY
+DOMAIN-SUFFIX,discord.com,PROXY
+DOMAIN-SUFFIX,discord.gg,PROXY
+DOMAIN-SUFFIX,reddit.com,PROXY
+
+# =========================================
+# GitHub / Dev
+# =========================================
+DOMAIN-SUFFIX,github.com,PROXY
+DOMAIN-SUFFIX,githubusercontent.com,PROXY
+DOMAIN-SUFFIX,github.io,PROXY
+DOMAIN-SUFFIX,docker.com,PROXY
+DOMAIN-SUFFIX,stackoverflow.com,PROXY
+GEOIP,RU,DIRECT
+
+# =========================================
+# FINAL
+# =========================================
+FINAL,PROXY
+
+[Host]
+localhost = 127.0.0.1
