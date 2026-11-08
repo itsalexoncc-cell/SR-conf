@@ -166,6 +166,27 @@ DOMAIN-SUFFIX,googlesource.com,Gemini
 DOMAIN-SUFFIX,googlecode.com,Gemini
 DOMAIN-SUFFIX,googleusercontent.com,Gemini
 DOMAIN-SUFFIX,withyoutube.com,Gemini
+growth-pa.googleapis.com:443
+DOMAIN-SUFFIX,googleapis.com,Wi-Fi #
+
+DOMAIN-SUFFIX,oauthaccountmanager.googleapis.com,Gemini
+DOMAIN-SUFFIX,googleapis.com,Gemini
+DOMAIN-SUFFIX,notitications-pa.googleapis.com,Gemini
+DOMAIN-SUFFIX,googleapis.com,Gemini
+DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com,Gemini
+DOMAIN, robinfrontend-pa.googleapis.com,Gemini
+DOMAIN-SUFFIX,signaler-pa.googleapis.com:443,Gemini
+DOMAIN-SUFFIX,googleapis.com,Gemini
+DOMAIN-SUFFIX,oauthaccountmanager.googleapis.com,Gemini
+DOMAIN-SUFFIX,googleapis.com,Gemini
+DOMAIN-SUFFIX,oauthaccountmanager.googleapis.com,Gemini
+DOMAIN-SUFFIX,googleapis.com,Gemini
+DOMAIN-SUFFIX,oauthaccountmanager.googleapis.com,Gemini
+DOMAIN-SUFFIX, googleapis.com,Gemini
+DOMAIN-SUFFIX,oauthaccountmanager.googleapis.com,Gemini
+DOMAIN-SUFFIX,googleapis.com,Gemini
+DOMAIN-SUFFIX,oauth2.googleapis.com,Gemini
+DOMAIN-SUFFIX,oauth2.googleapis.com,Gemini
 
 # --- 2.7 Google IP ranges (for apps that connect by IP) ---
 IP-CIDR,8.8.4.0/24,Gemini,no-resolve
